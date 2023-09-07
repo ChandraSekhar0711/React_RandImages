@@ -7,7 +7,7 @@ import { Spinner } from "@chakra-ui/react";
 export function App() {
   const [imageList, setImageList] = useState([]);
   const { isBottom } = useScrollPosition();
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   console.log(isBottom);
   useEffect(() => {
@@ -23,6 +23,7 @@ export function App() {
     const { data } = await axios(
       `https://picsum.photos/v2/list?page=${pagesNumber}&limit=10`
     );
+    console.log(data);
     setImageList([...imageList, ...data]);
     setIsLoading(false);
   }

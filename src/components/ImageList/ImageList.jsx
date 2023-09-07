@@ -5,7 +5,7 @@ export function ImageList({ imageList }) {
   return (
     <Flex direction="row" wrap="wrap" justify="center" gap="25">
       {imageList.map((image) => (
-        <WrapItem key={image.id}>
+        <WrapItem key={image.url}>
           <ImageListItem image={image} />
         </WrapItem>
       ))}
